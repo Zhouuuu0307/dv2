@@ -1,0 +1,425 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "padding": {
+    "top": 14,
+    "right": 32,
+    "bottom": 14,
+    "left": 14
+  },
+  "background": "transparent",
+  "title": {
+    "text": "After Black Summer, the country couldn't stop watching the koala",
+    "subtitle": [
+      "Koala records jump nearly tenfold between 2019 and 2023.",
+      "The other four icons grow steadily, but quietly."
+    ],
+    "fontSize": 16,
+    "subtitleFontSize": 11.5,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 14,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "vconcat": [
+    {
+      "width": 760,
+      "height": 340,
+      "data": {
+        "url": "data/by_year.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.year >= 1990 && datum.year <= 2025"
+        },
+        {
+          "filter": {
+            "param": "brush"
+          }
+        }
+      ],
+      "layer": [
+        {
+          "description": "Annotation rule — Black Summer 2019-20",
+          "data": {
+            "values": [
+              {
+                "year": 2019.5,
+                "count": 0
+              },
+              {
+                "year": 2019.5,
+                "count": 90000
+              }
+            ]
+          },
+          "mark": {
+            "type": "line",
+            "strokeDash": [
+              4,
+              4
+            ],
+            "color": "#bfb59a",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "count",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "description": "Annotation label — Black Summer",
+          "data": {
+            "values": [
+              {
+                "year": 2019.5,
+                "label": "Black Summer 2019–20",
+                "ypx": 6
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "top",
+            "fontSize": 10.5,
+            "fontWeight": 700,
+            "color": "#4A3724"
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "ypx",
+              "type": "quantitative",
+              "scale": null,
+              "axis": null
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        },
+        {
+          "description": "Main line per species",
+          "params": [
+            {
+              "name": "species_focus",
+              "select": {
+                "type": "point",
+                "fields": [
+                  "common_name"
+                ],
+                "on": "click",
+                "clear": "dblclick",
+                "toggle": "event.shiftKey"
+              },
+              "bind": "legend"
+            },
+            {
+              "name": "year_hover",
+              "select": {
+                "type": "point",
+                "encodings": [
+                  "x"
+                ],
+                "on": "pointerover",
+                "nearest": true,
+                "clear": "pointerout"
+              }
+            }
+          ],
+          "mark": {
+            "type": "area",
+            "interpolate": "monotone",
+            "cursor": "pointer",
+            "line": {
+              "strokeWidth": 2.2
+            },
+            "fillOpacity": 0.08
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "axis": {
+                "title": null,
+                "format": "d",
+                "tickCount": 8,
+                "labelFontSize": 11,
+                "labelColor": "#5d544a",
+                "grid": false,
+                "domainColor": "#cdc5ad",
+                "tickColor": "#cdc5ad",
+                "labelLimit": 1000
+              }
+            },
+            "y": {
+              "field": "count",
+              "type": "quantitative",
+              "axis": {
+                "title": "Observations per year",
+                "titleFontSize": 11,
+                "titleColor": "#5d544a",
+                "titlePadding": 10,
+                "titleFontWeight": 600,
+                "labelExpr": "datum.value >= 1000 ? format(datum.value/1000,'.0f') + 'k' : format(datum.value,',')",
+                "grid": true,
+                "gridColor": "#ece2c7",
+                "gridDash": [
+                  2,
+                  4
+                ],
+                "domain": false,
+                "ticks": false,
+                "labelFontSize": 10,
+                "labelColor": "#5d544a",
+                "labelPadding": 4,
+                "labelLimit": 1000
+              }
+            },
+            "color": {
+              "field": "common_name",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Red Kangaroo",
+                  "Eastern Grey Kangaroo",
+                  "Koala",
+                  "Emu",
+                  "Platypus"
+                ],
+                "range": [
+                  "#B85450",
+                  "#8B8378",
+                  "#4878A8",
+                  "#C8923D",
+                  "#4A6670"
+                ]
+              },
+              "legend": {
+                "title": null,
+                "labelFontSize": 11,
+                "labelColor": "#2B1F12",
+                "orient": "top",
+                "direction": "horizontal",
+                "symbolType": "stroke",
+                "symbolStrokeWidth": 3,
+                "symbolSize": 200,
+                "offset": 8,
+                "padding": 6,
+                "labelOffset": 2,
+                "labelLimit": 1000
+              }
+            },
+            "opacity": {
+              "condition": {
+                "param": "species_focus",
+                "value": 1
+              },
+              "value": 0.18
+            },
+            "fillOpacity": {
+              "condition": {
+                "param": "species_focus",
+                "empty": false,
+                "value": 0.25
+              },
+              "value": 0.08
+            }
+          }
+        },
+        {
+          "description": "Vertical hover rule",
+          "transform": [
+            {
+              "filter": {
+                "param": "year_hover",
+                "empty": false
+              }
+            }
+          ],
+          "mark": {
+            "type": "rule",
+            "color": "#2B1F12",
+            "strokeWidth": 1,
+            "opacity": 0.55
+          },
+          "encoding": {
+            "x": {
+              "aggregate": "min",
+              "field": "year",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "description": "Hover circles + tooltip targets",
+          "transform": [
+            {
+              "filter": {
+                "param": "year_hover",
+                "empty": false
+              }
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 90,
+            "stroke": "white",
+            "strokeWidth": 1.4
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "count",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "common_name",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Red Kangaroo",
+                  "Eastern Grey Kangaroo",
+                  "Koala",
+                  "Emu",
+                  "Platypus"
+                ],
+                "range": [
+                  "#B85450",
+                  "#8B8378",
+                  "#4878A8",
+                  "#C8923D",
+                  "#4A6670"
+                ]
+              },
+              "legend": null
+            },
+            "opacity": {
+              "condition": {
+                "param": "species_focus",
+                "value": 1
+              },
+              "value": 0.18
+            },
+            "tooltip": [
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Year",
+                "format": "d"
+              },
+              {
+                "field": "common_name",
+                "type": "nominal",
+                "title": "Species"
+              },
+              {
+                "field": "count",
+                "type": "quantitative",
+                "title": "Observations",
+                "format": ","
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "description": "Overview / brush strip",
+      "width": 760,
+      "height": 60,
+      "data": {
+        "url": "data/by_year.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.year >= 1990 && datum.year <= 2025"
+        }
+      ],
+      "params": [
+        {
+          "name": "brush",
+          "select": {
+            "type": "interval",
+            "encodings": [
+              "x"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone",
+        "color": "#C8923D",
+        "opacity": 0.45,
+        "line": {
+          "color": "#C8923D",
+          "opacity": 0.6,
+          "strokeWidth": 1
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1990,
+              2025
+            ]
+          },
+          "axis": {
+            "title": null,
+            "format": "d",
+            "tickCount": 8,
+            "labelFontSize": 10,
+            "labelColor": "#5d544a",
+            "grid": false,
+            "domainColor": "#cdc5ad",
+            "tickColor": "#cdc5ad"
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "count",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "nice": false
+          }
+        }
+      },
+      "view": {
+        "fill": "#f0ebe0"
+      }
+    }
+  ],
+  "spacing": 8
+}

@@ -1,0 +1,1276 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "padding": 0,
+  "title": {
+    "text": "Two ladders agree on one thing: the koala is in trouble",
+    "subtitle": "Koala and platypus are both declining. The three others remain stable — for now.",
+    "fontSize": 14,
+    "subtitleFontSize": 10.5,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 10,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "concat": {
+      "spacing": 10
+    }
+  },
+  "hconcat": [
+    {
+      "width": 155,
+      "height": 240,
+      "data": {
+        "values": [
+          {
+            "name": "Koala",
+            "color": "#6B7B5E",
+            "iucn": "Vulnerable",
+            "epbc": "Endangered",
+            "worst_label": "Endangered",
+            "worst_color": "#A8472E",
+            "trend": "↓ Decreasing",
+            "trend_color": "#A8472E"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "fill": "#FAF6ED",
+            "stroke": "#ece2c7",
+            "strokeWidth": 1,
+            "cornerRadius": 6,
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 240
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadiusTopLeft": 6,
+            "cornerRadiusTopRight": 6
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 7
+            },
+            "color": {
+              "value": "#6B7B5E"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11.5,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "align": "center",
+            "baseline": "top",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 20
+            },
+            "text": {
+              "value": "Koala"
+            }
+          }
+        },
+        {
+          "params": [
+            {
+              "name": "hov_Koala",
+              "select": {
+                "type": "point",
+                "on": "mouseover",
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "cursor": "pointer",
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "color": {
+              "value": "#A8472E"
+            },
+            "size": {
+              "condition": {
+                "param": "hov_Koala",
+                "empty": false,
+                "value": 3200
+              },
+              "value": 2400
+            },
+            "tooltip": [
+              {
+                "value": "Koala",
+                "type": "nominal"
+              },
+              {
+                "value": "IUCN: Vulnerable",
+                "type": "nominal"
+              },
+              {
+                "value": "EPBC: Endangered",
+                "type": "nominal"
+              },
+              {
+                "value": "↓ Decreasing",
+                "type": "nominal"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "fontWeight": 700,
+            "color": "white",
+            "align": "center",
+            "baseline": "middle",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "text": {
+              "value": "Endangered"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#ece2c7",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "value": 14
+            },
+            "x2": {
+              "value": 141
+            },
+            "y": {
+              "value": 148
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 155
+            },
+            "text": {
+              "value": "IUCN: Vulnerable"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 169
+            },
+            "text": {
+              "value": "EPBC: Endangered"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10.5,
+            "fontWeight": 700,
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 190
+            },
+            "color": {
+              "value": "#A8472E"
+            },
+            "text": {
+              "value": "↓ Decreasing"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 155,
+      "height": 240,
+      "data": {
+        "values": [
+          {
+            "name": "Platypus",
+            "color": "#4A6670",
+            "iucn": "Near Threatened",
+            "epbc": "Not listed",
+            "worst_label": "Near Threatened",
+            "worst_color": "#C8923D",
+            "trend": "↓ Decreasing",
+            "trend_color": "#A8472E"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "fill": "#FAF6ED",
+            "stroke": "#ece2c7",
+            "strokeWidth": 1,
+            "cornerRadius": 6,
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 240
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadiusTopLeft": 6,
+            "cornerRadiusTopRight": 6
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 7
+            },
+            "color": {
+              "value": "#4A6670"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11.5,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "align": "center",
+            "baseline": "top",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 20
+            },
+            "text": {
+              "value": "Platypus"
+            }
+          }
+        },
+        {
+          "params": [
+            {
+              "name": "hov_Platypus",
+              "select": {
+                "type": "point",
+                "on": "mouseover",
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "cursor": "pointer",
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "color": {
+              "value": "#C8923D"
+            },
+            "size": {
+              "condition": {
+                "param": "hov_Platypus",
+                "empty": false,
+                "value": 3200
+              },
+              "value": 2400
+            },
+            "tooltip": [
+              {
+                "value": "Platypus",
+                "type": "nominal"
+              },
+              {
+                "value": "IUCN: Near Threatened",
+                "type": "nominal"
+              },
+              {
+                "value": "EPBC: Not listed",
+                "type": "nominal"
+              },
+              {
+                "value": "↓ Decreasing",
+                "type": "nominal"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "fontWeight": 700,
+            "color": "white",
+            "align": "center",
+            "baseline": "middle",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "text": {
+              "value": "Near\nThreatened"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#ece2c7",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "value": 14
+            },
+            "x2": {
+              "value": 141
+            },
+            "y": {
+              "value": 148
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 155
+            },
+            "text": {
+              "value": "IUCN: Near Threatened"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 169
+            },
+            "text": {
+              "value": "EPBC: Not listed"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10.5,
+            "fontWeight": 700,
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 190
+            },
+            "color": {
+              "value": "#A8472E"
+            },
+            "text": {
+              "value": "↓ Decreasing"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 155,
+      "height": 240,
+      "data": {
+        "values": [
+          {
+            "name": "Emu",
+            "color": "#C8923D",
+            "iucn": "Least Concern",
+            "epbc": "Not listed",
+            "worst_label": "Least Concern",
+            "worst_color": "#5B8DB8",
+            "trend": "→ Stable",
+            "trend_color": "#8B8378"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "fill": "#FAF6ED",
+            "stroke": "#ece2c7",
+            "strokeWidth": 1,
+            "cornerRadius": 6,
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 240
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadiusTopLeft": 6,
+            "cornerRadiusTopRight": 6
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 7
+            },
+            "color": {
+              "value": "#C8923D"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11.5,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "align": "center",
+            "baseline": "top",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 20
+            },
+            "text": {
+              "value": "Emu"
+            }
+          }
+        },
+        {
+          "params": [
+            {
+              "name": "hov_Emu",
+              "select": {
+                "type": "point",
+                "on": "mouseover",
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "cursor": "pointer",
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "color": {
+              "value": "#5B8DB8"
+            },
+            "size": {
+              "condition": {
+                "param": "hov_Emu",
+                "empty": false,
+                "value": 3200
+              },
+              "value": 2400
+            },
+            "tooltip": [
+              {
+                "value": "Emu",
+                "type": "nominal"
+              },
+              {
+                "value": "IUCN: Least Concern",
+                "type": "nominal"
+              },
+              {
+                "value": "EPBC: Not listed",
+                "type": "nominal"
+              },
+              {
+                "value": "→ Stable",
+                "type": "nominal"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "fontWeight": 700,
+            "color": "white",
+            "align": "center",
+            "baseline": "middle",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "text": {
+              "value": "Least\nConcern"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#ece2c7",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "value": 14
+            },
+            "x2": {
+              "value": 141
+            },
+            "y": {
+              "value": 148
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 155
+            },
+            "text": {
+              "value": "IUCN: Least Concern"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 169
+            },
+            "text": {
+              "value": "EPBC: Not listed"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10.5,
+            "fontWeight": 700,
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 190
+            },
+            "color": {
+              "value": "#8B8378"
+            },
+            "text": {
+              "value": "→ Stable"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 155,
+      "height": 240,
+      "data": {
+        "values": [
+          {
+            "name": "Eastern Grey\nKangaroo",
+            "color": "#8B8378",
+            "iucn": "Least Concern",
+            "epbc": "Not listed",
+            "worst_label": "Least Concern",
+            "worst_color": "#5B8DB8",
+            "trend": "→ Stable",
+            "trend_color": "#8B8378"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "fill": "#FAF6ED",
+            "stroke": "#ece2c7",
+            "strokeWidth": 1,
+            "cornerRadius": 6,
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 240
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadiusTopLeft": 6,
+            "cornerRadiusTopRight": 6
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 7
+            },
+            "color": {
+              "value": "#8B8378"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11.5,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "align": "center",
+            "baseline": "top",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 20
+            },
+            "text": {
+              "value": "Eastern Grey\nKangaroo"
+            }
+          }
+        },
+        {
+          "params": [
+            {
+              "name": "hov_Eastern_Grey_Kangaroo",
+              "select": {
+                "type": "point",
+                "on": "mouseover",
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "cursor": "pointer",
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "color": {
+              "value": "#5B8DB8"
+            },
+            "size": {
+              "condition": {
+                "param": "hov_Eastern_Grey_Kangaroo",
+                "empty": false,
+                "value": 3200
+              },
+              "value": 2400
+            },
+            "tooltip": [
+              {
+                "value": "Eastern Grey\nKangaroo",
+                "type": "nominal"
+              },
+              {
+                "value": "IUCN: Least Concern",
+                "type": "nominal"
+              },
+              {
+                "value": "EPBC: Not listed",
+                "type": "nominal"
+              },
+              {
+                "value": "→ Stable",
+                "type": "nominal"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "fontWeight": 700,
+            "color": "white",
+            "align": "center",
+            "baseline": "middle",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "text": {
+              "value": "Least\nConcern"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#ece2c7",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "value": 14
+            },
+            "x2": {
+              "value": 141
+            },
+            "y": {
+              "value": 148
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 155
+            },
+            "text": {
+              "value": "IUCN: Least Concern"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 169
+            },
+            "text": {
+              "value": "EPBC: Not listed"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10.5,
+            "fontWeight": 700,
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 190
+            },
+            "color": {
+              "value": "#8B8378"
+            },
+            "text": {
+              "value": "→ Stable"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 155,
+      "height": 240,
+      "data": {
+        "values": [
+          {
+            "name": "Red Kangaroo",
+            "color": "#B85450",
+            "iucn": "Least Concern",
+            "epbc": "Not listed",
+            "worst_label": "Least Concern",
+            "worst_color": "#5B8DB8",
+            "trend": "→ Stable",
+            "trend_color": "#8B8378"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "fill": "#FAF6ED",
+            "stroke": "#ece2c7",
+            "strokeWidth": 1,
+            "cornerRadius": 6,
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 240
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadiusTopLeft": 6,
+            "cornerRadiusTopRight": 6
+          },
+          "encoding": {
+            "x": {
+              "value": 0
+            },
+            "x2": {
+              "value": 155
+            },
+            "y": {
+              "value": 0
+            },
+            "y2": {
+              "value": 7
+            },
+            "color": {
+              "value": "#B85450"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11.5,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "align": "center",
+            "baseline": "top",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 20
+            },
+            "text": {
+              "value": "Red Kangaroo"
+            }
+          }
+        },
+        {
+          "params": [
+            {
+              "name": "hov_Red_Kangaroo",
+              "select": {
+                "type": "point",
+                "on": "mouseover",
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "cursor": "pointer",
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "color": {
+              "value": "#5B8DB8"
+            },
+            "size": {
+              "condition": {
+                "param": "hov_Red_Kangaroo",
+                "empty": false,
+                "value": 3200
+              },
+              "value": 2400
+            },
+            "tooltip": [
+              {
+                "value": "Red Kangaroo",
+                "type": "nominal"
+              },
+              {
+                "value": "IUCN: Least Concern",
+                "type": "nominal"
+              },
+              {
+                "value": "EPBC: Not listed",
+                "type": "nominal"
+              },
+              {
+                "value": "→ Stable",
+                "type": "nominal"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "fontWeight": 700,
+            "color": "white",
+            "align": "center",
+            "baseline": "middle",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 100
+            },
+            "text": {
+              "value": "Least\nConcern"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#ece2c7",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "value": 14
+            },
+            "x2": {
+              "value": 141
+            },
+            "y": {
+              "value": 148
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 155
+            },
+            "text": {
+              "value": "IUCN: Least Concern"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 169
+            },
+            "text": {
+              "value": "EPBC: Not listed"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10.5,
+            "fontWeight": 700,
+            "align": "center",
+            "baseline": "top"
+          },
+          "encoding": {
+            "x": {
+              "value": 77.5
+            },
+            "y": {
+              "value": 190
+            },
+            "color": {
+              "value": "#8B8378"
+            },
+            "text": {
+              "value": "→ Stable"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

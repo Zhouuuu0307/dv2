@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Country Known by Its Animals — Five iconic species of Australia</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══ STICKY NAVBAR ══════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">A Country Known by Its Animals</a>
+    <ul class="nav-links">
+      <li><a href="#section-1">01 Icons</a></li>
+      <li><a href="#section-2">02 Unique</a></li>
+      <li><a href="#section-3">03 Different Australias</a></li>
+      <li><a href="#section-4">04 At Risk</a></li>
+      <li><a href="#section-5">05 Protect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<header class="hero" id="top">
+  <div class="hero-photo"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">Data Visualisation 2 · FIT2179 · Monash University</div>
+    <h1>
+      A Country Known by Its Animals
+      <span class="sub">Five iconic species and what they reveal about Australia</span>
+    </h1>
+    <p class="deck">
+      Australia introduces itself to the world through animals. The kangaroo on the
+      coat of arms, the koala in tourist brochures, the platypus in primary-school
+      textbooks. This story follows five of those icons — where they live, why they
+      are biologically unusual, and how secure their futures really are.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num"><span class="species-dot" style="background:#B85450"></span>79,829</div>
+        <div class="label">Red Kangaroo<br>observations</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num"><span class="species-dot" style="background:#8B8378"></span>223,230</div>
+        <div class="label">Eastern Grey Kangaroo<br>observations</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num crisis"><span class="species-dot" style="background:#4878A8"></span>394,119</div>
+        <div class="label">Koala<br>observations</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num"><span class="species-dot" style="background:#C8923D"></span>148,992</div>
+        <div class="label">Emu<br>observations</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num warn"><span class="species-dot" style="background:#4A6670"></span>24,587</div>
+        <div class="label">Platypus<br>observations</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ══ SECTION 1 — A COUNTRY KNOWN BY ITS ANIMALS (2 charts) ══ -->
+  <section class="section" id="section-1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-label-text">A country known by its animals</span>
+    </div>
+    <div class="section-body">
+      <h2>The five animals everyone draws when they draw Australia</h2>
+      <p class="lede">
+        Ask anyone to picture Australia and they will sketch the same handful of
+        creatures. The kangaroo on the coat of arms. The koala in the eucalyptus.
+        The duck-billed platypus. The flightless emu. These animals are not just
+        wildlife — they are how the country presents itself to the world.
+      </p>
+
+      <div class="chart-text">
+        <div class="chart-card" id="chart1"></div>
+        <div class="text-col">
+          <p>
+            The five species in this story have together generated nearly
+            <strong>900,000 verified observation records</strong> in the
+            <em>Atlas of Living Australia</em> — the country's national
+            biodiversity database. They are by some margin the most-recorded
+            terrestrial vertebrates in Australia.
+          </p>
+          <p>
+            That popularity is not accidental. Each carries cultural weight far
+            beyond its biology: the kangaroo and emu appear on the national coat
+            of arms, the platypus features on the 20-cent coin, and the koala is
+            the international face of Australian tourism.
+          </p>
+        </div>
+      </div>
+      <p class="chart-caption">
+        Total observation records since 1990, Atlas of Living Australia.
+      </p>
+
+      <p style="margin-top: 32px;">
+        Records of these species are not constant through time. Each peak,
+        plateau and surge below tells a story — about a fire season, about
+        changing public attention, about which species suddenly became urgent
+        to document.
+      </p>
+
+      <div class="stat-strip">
+        <div class="stat-item">
+          <div class="stat-num">36<span class="stat-unit">yrs</span></div>
+          <div class="stat-label">Records span<br>1990 to 2025</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">9.6<span class="stat-unit">×</span></div>
+          <div class="stat-label">Koala records<br>grew 2018 → 2023</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="stat-pill">2019–20</span></div>
+          <div class="stat-label">Black Summer<br>visible in every line</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Species traced<br>through 35 years</div>
+        </div>
+      </div>
+
+      <div class="chart-card chart-card--wide" id="chart2"></div>
+      <p class="chart-caption">
+        The 2019–20 spike is a fire-driven monitoring surge — not a population boom. The koala line dominates because koalas attract disproportionate public attention after the fires.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2 — WHY THESE ANIMALS ARE UNIQUE (2 charts) ══ -->
+  <section class="section" id="section-2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-label-text">Why these animals are unique</span>
+    </div>
+    <div class="section-body">
+      <h2>They are unusual on a global scale</h2>
+      <p class="lede">
+        These animals are unusual not because Australia chose them, but because
+        Australia was geographically isolated for tens of millions of years.
+        That isolation produced two whole mammal lineages — marsupials and
+        monotremes — that survived almost nowhere else.
+      </p>
+
+      <p>
+        When the continents were one, mammals were evolving everywhere. But when
+        Australia broke away from Gondwana roughly 45 million years ago, it took
+        its wildlife with it — and shut the door. While placental mammals came to
+        dominate every other continent, Australia kept two ancient experiments
+        alive: pouched mammals that raise their young in a pouch, and egg-laying
+        mammals that defy almost every rule of what a mammal is supposed to do.
+        Nearly half of all marsupial species on Earth live here, and four of the
+        five monotremes exist nowhere else.
+      </p>
+
+      <div class="charts-side-by-side">
+        <div class="side-chart-col">
+          <div class="chart-card" id="chart3"></div>
+          <p class="chart-caption">
+            Three lineages, shown against their global species counts. Australia hosts
+            a disproportionately large share of the world's pouched and egg-laying mammals.
+          </p>
+        </div>
+        <div class="side-chart-col">
+          <div class="chart-card" id="chart4"></div>
+          <p class="chart-caption">
+            Body weight, lifespan, days to birth or hatching, and offspring per year — four dimensions that show just how different these five animals really are.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top: 32px;">
+        The biology makes the point even more sharply. The platypus lays eggs,
+        detects prey through electric fields in the water, and carries a venomous
+        spur on its hind leg — a combination found in no other mammal on Earth.
+        The red kangaroo carries a joey the size of a jellybean at birth, then
+        nurses it in a pouch for months while the animal learns to exist. The emu
+        cannot fly, stands taller than most humans, and leaves the male to
+        incubate the eggs alone. None of this is typical. All of it is Australian.
+      </p>
+
+      <div class="stat-strip">
+        <div class="stat-item">
+          <div class="stat-num">45<span class="stat-unit">M yrs</span></div>
+          <div class="stat-label">Since Australia<br>broke from Gondwana</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4<span class="stat-unit">/5</span></div>
+          <div class="stat-label">Monotreme species<br>endemic to Australia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">48<span class="stat-unit">%</span></div>
+          <div class="stat-label">World's marsupials<br>live here</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1</div>
+          <div class="stat-label">The platypus — unique<br>among all mammals</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3 — DIFFERENT ANIMALS, DIFFERENT AUSTRALIAS (3 charts) ══ -->
+  <section class="section" id="section-3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-label-text">Different animals, different Australias</span>
+    </div>
+    <div class="section-body">
+      <h2>No single Australia holds all five</h2>
+      <p class="lede">
+        The five icons share a flag but not a landscape. Each species has carved
+        out its own version of Australia — defined not by borders but by rainfall,
+        vegetation, and water. Plot them all at once and the continent dissolves
+        into five overlapping territories.
+      </p>
+
+      <div class="map-card-wrapper">
+        <div class="chart-card chart-card--wide" id="chart5"></div>
+        <div class="map-zoom-control">
+          <label for="chart5-zoom">Zoom to:</label>
+          <select id="chart5-zoom">
+            <option value="All Australia">All Australia</option>
+            <option value="New South Wales">New South Wales</option>
+            <option value="Victoria">Victoria</option>
+            <option value="Queensland">Queensland</option>
+            <option value="South Australia">South Australia</option>
+            <option value="Western Australia">Western Australia</option>
+            <option value="Tasmania">Tasmania</option>
+            <option value="Northern Territory">Northern Territory</option>
+            <option value="ACT">ACT</option>
+          </select>
+        </div>
+      </div>
+      <p class="chart-caption">
+        Every dot is a real sighting. Click a species in the legend to isolate its range.
+      </p>
+
+      <p style="margin-top: 32px;">
+        The separation is striking even at a glance. Platypus dots cluster tightly
+        along the east-coast river systems — they need clean, flowing water and
+        cannot survive in the arid centre. Koala dots hug the same coast but sit
+        further inland, tracing the eucalypt forests. Red kangaroo dots spread
+        across the vast, dry interior where no koala could live. Emu dots appear
+        almost everywhere — the most adaptable of the five, at home from the
+        coast to the outback. Use the zoom to see how the pattern sharpens inside
+        each state.
+      </p>
+
+      <div class="charts-side-by-side sec3-pair">
+        <div class="side-chart-col">
+          <div class="map-card-wrapper sec3-map-wrapper">
+            <div class="chart-card chart-card--wide" id="chart6"></div>
+            <div class="map-zoom-control">
+              <label for="chart6-zoom">Zoom to:</label>
+              <select id="chart6-zoom">
+                <option value="All Australia">All Australia</option>
+                <option value="New South Wales">New South Wales</option>
+                <option value="Victoria">Victoria</option>
+                <option value="Queensland">Queensland</option>
+                <option value="South Australia">South Australia</option>
+                <option value="Western Australia">Western Australia</option>
+                <option value="Tasmania">Tasmania</option>
+                <option value="Northern Territory">Northern Territory</option>
+                <option value="ACT">ACT</option>
+              </select>
+            </div>
+          </div>
+          <p class="chart-caption">
+            Each ~50 km cell coloured by the species recorded there most often. Hover a cell to read all five counts.
+          </p>
+          <p style="margin-top: 12px;">
+            Each colour boundary is an ecological boundary — where rainfall drops,
+            the koala's range ends and the red kangaroo's begins.
+          </p>
+        </div>
+        <div class="side-chart-col">
+          <div class="chart-card chart-card--wide" id="chart7"></div>
+          <p class="chart-caption">
+            Share of each state's observation records by species. Bars sorted by total records — NSW leads because it is Australia's most densely monitored state.
+          </p>
+          <p style="margin-top: 12px;">
+            NSW leads not because it has the most wildlife, but the most observers.
+            South Australia is red kangaroo country. Tasmania stands completely
+            apart — no wild kangaroos, no koalas, overwhelmingly platypus and emu.
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4 — FAMOUS, BUT NOT ALWAYS SAFE (3 charts) ══ -->
+  <section class="section" id="section-4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-label-text">Famous, but not always safe</span>
+    </div>
+    <div class="section-body">
+      <h2>Cultural fame does not protect them</h2>
+      <p class="lede">
+        Of the five species in this story, two are quietly disappearing.
+        Koalas were uplisted from <em>Vulnerable</em> to <em>Endangered</em>
+        in February 2022 across Queensland, NSW and the ACT. Platypuses are
+        classified <em>Near Threatened</em> internationally, and their
+        numbers are falling almost everywhere they live.
+      </p>
+
+      <div class="chart-card chart-card--wide" id="chart8"></div>
+      <p class="chart-caption">
+        Each card shows the worst status across the IUCN global list and Australia's EPBC Act, and the current population trend.
+      </p>
+
+      <p style="margin-top: 32px;">
+        The 2019–20 Black Summer was the moment the numbers became undeniable.
+        In a single fire season, an estimated 80,000+ koalas were lost across
+        eastern Australia. Kangaroo Island alone lost 80% of its koala population.
+        But behind the headline fires, the daily pressures are just as relentless —
+        land clearing, disease, river regulation, drought.
+      </p>
+
+      <div class="sec4-fire-pair">
+        <div class="sec4-left">
+          <div class="chart-card chart-card--wide" id="chart9"></div>
+          <p class="chart-caption">
+            Left bars = hectares burnt (thousands); right bars = estimated koalas lost. South Australia's outsized toll reflects Kangaroo Island, where 4 in 5 koalas were lost.
+          </p>
+        </div>
+        <div class="sec4-right">
+          <div class="insight-box sec4-insight">
+            <span class="big-stat-label">In 10 years the koala has moved</span>
+            <span class="big-stat">2 steps</span>
+            <p style="margin: 8px 0 0; font-size: 0.95rem;">
+              from <em>Vulnerable</em> (2012) to <em>Endangered</em> (2022)
+              under the EPBC Act — not because the laws tightened, but because
+              the data forced them to.
+            </p>
+            <p style="margin: 16px 0 0; font-size: 0.9rem; color: #5d544a;">
+              South Australia's number looks extreme: Kangaroo Island, home to
+              a genetically distinct koala population, lost an estimated 4 in 5
+              animals in a single season.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: 32px;">
+        Fire is the most visible threat — but not the only one. Every day,
+        each species faces a different set of pressures shaped by where it
+        lives and how it reproduces. The koala is exposed on almost every
+        front: its dependence on a single tree species makes habitat clearing
+        catastrophic, its slow breeding rate means disease can spread faster
+        than recovery, and its visibility in suburban areas turns roads into
+        a constant hazard. The platypus faces a quieter crisis — dams, water
+        extraction and drought silently shrink the rivers it needs to survive.
+      </p>
+
+      <div class="chart-card chart-card--wide" id="chart10"></div>
+      <p class="chart-caption">
+        Threat severity per species — Low / Medium / High. Grey cells = not listed in current conservation advice. Click a cell to highlight its row and column.
+      </p>
+
+      <p style="margin-top: 20px;">
+        One pattern stands out across the whole grid: <strong>habitat clearing
+        and vehicle strike</strong> are the only two threats that affect every
+        single species at medium or high severity. Roads and land use are
+        Australia-wide problems with no easy fix — and they fall equally on
+        the vulnerable and the abundant.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5 — PROTECTING THE ICONS (2 charts) ══ -->
+  <section class="section" id="section-5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-label-text">Protecting the icons, protecting Australia</span>
+    </div>
+    <div class="section-body">
+      <h2>Attention has grown — but attention is not protection</h2>
+      <p class="lede">
+        Since Black Summer, Australians have been watching more closely. Koala
+        sightings reported to the Atlas of Living Australia grew nearly tenfold
+        in the years after the fires. Platypus records rose sharply too. It is
+        one of the more hopeful numbers in this story — and one of the more
+        easily misread. More observations do not mean more animals. They mean
+        more people paying attention to animals that were already there.
+      </p>
+
+      <div class="chart-card chart-card--wide" id="chart11"></div>
+      <p class="chart-caption">
+        Annual observations indexed to 2015. Rising lines mean more eyes on the species — not more animals.
+      </p>
+
+      <p style="margin-top: 32px;">
+        The chart above shows effort, not abundance. What it cannot show is
+        whether the attention translates into action — whether the habitat gets
+        protected, the rivers kept flowing, the forests left standing. That is
+        a different kind of record-keeping entirely. The map below brings all
+        five species together one last time. Three circles are green. Two are
+        not. The gap between them opened in a generation. Whether it closes
+        depends on what happens next.
+      </p>
+
+      <div class="map-card-wrapper">
+        <div class="chart-card chart-card--wide" id="chart12"></div>
+        <div class="map-zoom-control">
+          <label for="chart12-zoom">Zoom to:</label>
+          <select id="chart12-zoom">
+            <option value="All Australia">All Australia</option>
+            <option value="New South Wales">New South Wales</option>
+            <option value="Victoria">Victoria</option>
+            <option value="Queensland">Queensland</option>
+            <option value="South Australia">South Australia</option>
+            <option value="Western Australia">Western Australia</option>
+            <option value="Tasmania">Tasmania</option>
+            <option value="Northern Territory">Northern Territory</option>
+            <option value="ACT">ACT</option>
+          </select>
+        </div>
+      </div>
+      <p class="chart-caption">
+        Bubble size = total observations. Colour = conservation status. Two species are slipping — and both are declining.
+      </p>
+
+      <div class="insight-box">
+        Australia's iconic animals are still here. The kangaroos still hop,
+        the emus still stride, the platypuses still dive. But the koala moved
+        from Vulnerable to Endangered in ten years — not slowly, not quietly,
+        but in plain sight. The platypus is following a similar trajectory,
+        reach by reach, river by river. Protecting the icons is not really
+        about animals. It is about whether Australia keeps the forests, rivers
+        and grasslands that gave those animals a reason to exist here at all —
+        and that gave Australia a reason to put them on its coins and its coat
+        of arms in the first place.
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-col--author">
+        <p class="footer-name">Zhouxiang Li</p>
+        <p class="footer-meta">Student ID: 36082120</p>
+        <p class="footer-meta">FIT2179 Data Visualisation 2</p>
+        <p class="footer-meta">Monash University · May 2026</p>
+      </div>
+      <div class="footer-col footer-col--sources">
+        <h4>Data sources</h4>
+        <ul class="footer-source-list">
+          <li><a href="https://www.ala.org.au" target="_blank" rel="noopener">Atlas of Living Australia</a> — Occurrence records, downloaded May 2026</li>
+          <li><a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List of Threatened Species</a> — Global conservation assessments</li>
+          <li><a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/species" target="_blank" rel="noopener">DCCEEW — EPBC Act List of Threatened Fauna</a></li>
+          <li><a href="https://australian.museum/learn/animals/" target="_blank" rel="noopener">Australian Museum & Australian Geographic</a> — Species fact files</li>
+          <li><a href="https://wwf.org.au/news/2020/3-billion-animals-impacted-by-australia-s-bushfire-crisis/" target="_blank" rel="noopener">WWF Australia — 3 Billion Animals report (2020)</a></li>
+          <li><a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026" target="_blank" rel="noopener">Australian Bureau of Statistics</a> — ASGS State Boundaries 2021</li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col--ai">
+        <h4>AI acknowledgement</h4>
+        <p>Generative AI (ChatGPT, OpenAI) was used to support writing, code structure, data processing, and design planning. All data values cited in the text were verified against the original source files. The hero background image was generated using AI image tools.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

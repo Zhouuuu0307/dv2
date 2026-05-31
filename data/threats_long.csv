@@ -1,0 +1,51 @@
+species,common_name,threat,severity,severity_score,source
+red_kangaroo,Red Kangaroo,Habitat clearing,Medium,2,IUCN Red List 2016
+red_kangaroo,Red Kangaroo,Vehicle strike,Medium,2,Australian Museum
+red_kangaroo,Red Kangaroo,Climate change,Medium,2,IUCN Red List 2016
+red_kangaroo,Red Kangaroo,Drought,High,3,IUCN Red List 2016
+red_kangaroo,Red Kangaroo,Disease,Low,1,IUCN Red List 2016
+red_kangaroo,Red Kangaroo,Bushfire,Not listed,0,Threat not in current conservation advice
+red_kangaroo,Red Kangaroo,River regulation,Not listed,0,Threat not in current conservation advice
+red_kangaroo,Red Kangaroo,Pollution,Not listed,0,Threat not in current conservation advice
+red_kangaroo,Red Kangaroo,Predation,Not listed,0,Threat not in current conservation advice
+red_kangaroo,Red Kangaroo,Commercial harvest,Medium,2,DCCEEW (regulated quotas)
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Habitat clearing,High,3,IUCN Red List 2016
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Vehicle strike,High,3,Australian Museum
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Climate change,Low,1,IUCN Red List 2016
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Drought,Medium,2,IUCN Red List 2016
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Disease,Low,1,IUCN Red List 2016
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Bushfire,Not listed,0,Threat not in current conservation advice
+eastern_grey_kangaroo,Eastern Grey Kangaroo,River regulation,Not listed,0,Threat not in current conservation advice
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Pollution,Not listed,0,Threat not in current conservation advice
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Predation,Not listed,0,Threat not in current conservation advice
+eastern_grey_kangaroo,Eastern Grey Kangaroo,Commercial harvest,Medium,2,DCCEEW (regulated quotas)
+koala,Koala,Habitat clearing,High,3,DCCEEW Conservation Advice 2022
+koala,Koala,Vehicle strike,High,3,DCCEEW Conservation Advice 2022
+koala,Koala,Climate change,High,3,DCCEEW Conservation Advice 2022
+koala,Koala,Drought,Medium,2,DCCEEW Conservation Advice 2022
+koala,Koala,Disease,High,3,DCCEEW Conservation Advice 2022
+koala,Koala,Bushfire,High,3,DCCEEW (Black Summer impact)
+koala,Koala,River regulation,Not listed,0,Threat not in current conservation advice
+koala,Koala,Pollution,Not listed,0,Threat not in current conservation advice
+koala,Koala,Predation,Not listed,0,Threat not in current conservation advice
+koala,Koala,Commercial harvest,Low,1,Not legally harvested
+emu,Emu,Habitat clearing,Medium,2,Australian Museum
+emu,Emu,Vehicle strike,High,3,Australian Museum
+emu,Emu,Climate change,Low,1,IUCN Red List 2018
+emu,Emu,Drought,Low,1,IUCN Red List 2018
+emu,Emu,Disease,Low,1,IUCN Red List 2018
+emu,Emu,Bushfire,Not listed,0,Threat not in current conservation advice
+emu,Emu,River regulation,Not listed,0,Threat not in current conservation advice
+emu,Emu,Pollution,Not listed,0,Threat not in current conservation advice
+emu,Emu,Predation,Medium,2,Foxes and feral cats predate eggs
+emu,Emu,Commercial harvest,Low,1,Limited farming only
+platypus,Platypus,Habitat clearing,Medium,2,UNSW Platypus Conservation Initiative
+platypus,Platypus,Vehicle strike,Low,1,Mostly aquatic
+platypus,Platypus,Climate change,High,3,IUCN Red List 2016
+platypus,Platypus,Drought,High,3,IUCN Red List 2016
+platypus,Platypus,Disease,Medium,2,Mucormycosis (Tasmania)
+platypus,Platypus,Bushfire,Not listed,0,Threat not in current conservation advice
+platypus,Platypus,River regulation,High,3,UNSW Platypus Conservation Initiative
+platypus,Platypus,Pollution,High,3,Platypus Conservancy
+platypus,Platypus,Predation,Not listed,0,Threat not in current conservation advice
+platypus,Platypus,Commercial harvest,Low,1,Not legally harvested

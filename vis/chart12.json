@@ -1,0 +1,314 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 720,
+  "height": 540,
+  "padding": {
+    "top": 10,
+    "right": 16,
+    "bottom": 10,
+    "left": 16
+  },
+  "background": "transparent",
+  "title": {
+    "text": "Three secure, two slipping — and the gap is widening",
+    "subtitle": "Bubble size = total observations. Colour = current conservation status.",
+    "fontSize": 16,
+    "subtitleFontSize": 11.5,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 14,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 650,
+    "translate": [
+      360,
+      260
+    ]
+  },
+  "layer": [
+    {
+      "description": "States base",
+      "data": {
+        "url": "assets/states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0e5cb",
+        "stroke": "#c9b080",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "description": "Species bubbles — repositioned so each is centred over its main range with minimal overlap",
+      "data": {
+        "values": [
+          {
+            "common_name": "Red Kangaroo",
+            "lon": 136.0,
+            "lat": -28.0,
+            "total": 79829,
+            "status": "Least Concern",
+            "iucn": "Least Concern",
+            "epbc": "Not listed",
+            "range_note": "Arid interior — SA, NSW, NT, QLD"
+          },
+          {
+            "common_name": "Eastern Grey Kangaroo",
+            "lon": 145.5,
+            "lat": -34.0,
+            "total": 223230,
+            "status": "Least Concern",
+            "iucn": "Least Concern",
+            "epbc": "Not listed",
+            "range_note": "Eastern third of Australia"
+          },
+          {
+            "common_name": "Koala",
+            "lon": 152.5,
+            "lat": -28.0,
+            "total": 394119,
+            "status": "Endangered",
+            "iucn": "Vulnerable",
+            "epbc": "Endangered (Qld, NSW, ACT)",
+            "range_note": "East-coast eucalypt forest"
+          },
+          {
+            "common_name": "Emu",
+            "lon": 124.0,
+            "lat": -27.0,
+            "total": 148992,
+            "status": "Least Concern",
+            "iucn": "Least Concern",
+            "epbc": "Not listed",
+            "range_note": "All mainland states"
+          },
+          {
+            "common_name": "Platypus",
+            "lon": 146.5,
+            "lat": -41.5,
+            "total": 24587,
+            "status": "Near Threatened",
+            "iucn": "Near Threatened",
+            "epbc": "Not listed (Endangered in SA)",
+            "range_note": "Freshwater rivers, eastern AU + TAS"
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "sp_hover12",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout",
+            "fields": [
+              "common_name"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "white",
+        "strokeWidth": 2.5,
+        "cursor": "pointer",
+        "opacity": 0.88
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "total",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              400000
+            ],
+            "range": [
+              200,
+              10000
+            ]
+          },
+          "legend": {
+            "title": "Observations",
+            "titleFontSize": 11,
+            "titleFontWeight": 600,
+            "titleColor": "#5d544a",
+            "labelFontSize": 10,
+            "labelColor": "#2B1F12",
+            "values": [
+              25000,
+              100000,
+              250000,
+              400000
+            ],
+            "labelExpr": "datum.value >= 1000 ? format(datum.value/1000,'.0f') + 'k' : format(datum.value,',')",
+            "orient": "none",
+            "legendX": 680,
+            "legendY": 160,
+            "direction": "vertical",
+            "fillColor": "#FAF6ED",
+            "strokeColor": "#c9b080",
+            "padding": 10,
+            "rowPadding": 12,
+            "labelLimit": 1000
+          }
+        },
+        "color": {
+          "field": "status",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Least Concern",
+              "Near Threatened",
+              "Endangered"
+            ],
+            "range": [
+              "#4878A8",
+              "#C8923D",
+              "#A8472E"
+            ]
+          },
+          "legend": {
+            "title": "Conservation status",
+            "titleFontSize": 11,
+            "titleFontWeight": 600,
+            "titleColor": "#5d544a",
+            "labelFontSize": 11,
+            "labelColor": "#2B1F12",
+            "orient": "none",
+            "legendX": 20,
+            "legendY": 20,
+            "direction": "vertical",
+            "fillColor": "#FAF6ED",
+            "strokeColor": "#c9b080",
+            "padding": 10,
+            "symbolType": "circle",
+            "symbolSize": 200,
+            "labelLimit": 1000
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "sp_hover12",
+            "empty": true,
+            "value": 0.85
+          },
+          "value": 1
+        },
+        "tooltip": [
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Total records",
+            "format": ","
+          },
+          {
+            "field": "iucn",
+            "type": "nominal",
+            "title": "IUCN status"
+          },
+          {
+            "field": "epbc",
+            "type": "nominal",
+            "title": "EPBC status"
+          },
+          {
+            "field": "range_note",
+            "type": "nominal",
+            "title": "Range"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Species labels — placed away from bubble centres to avoid overlap",
+      "data": {
+        "values": [
+          {
+            "common_name": "Red Kangaroo",
+            "lon": 136.0,
+            "lat": -22.0
+          },
+          {
+            "common_name": "Eastern Grey Kangaroo",
+            "lon": 154.0,
+            "lat": -37.5
+          },
+          {
+            "common_name": "Koala",
+            "lon": 152.5,
+            "lat": -19.0
+          },
+          {
+            "common_name": "Emu",
+            "lon": 124.0,
+            "lat": -22.0
+          },
+          {
+            "common_name": "Platypus",
+            "lon": 148.5,
+            "lat": -39.0
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#2B1F12",
+        "stroke": "#FAF6ED",
+        "strokeWidth": 3,
+        "fillOpacity": 1,
+        "strokeOpacity": 0.8,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "common_name"
+        }
+      }
+    }
+  ]
+}

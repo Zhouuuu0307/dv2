@@ -1,0 +1,500 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "padding": 0,
+  "title": {
+    "text": "Australia's share of three unusual lineages",
+    "subtitle": "Almost half the world's pouched mammals and egg-laying mammals live here — nowhere else comes close.",
+    "fontSize": 13,
+    "subtitleFontSize": 9.5,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 10,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "concat": {
+      "spacing": 6
+    }
+  },
+  "hconcat": [
+    {
+      "width": 120,
+      "height": 175,
+      "data": {
+        "values": [
+          {
+            "segment": "In Australia",
+            "value": 2,
+            "pct": 40,
+            "world": 5,
+            "aus": 2,
+            "label": "Egg-laying mammals",
+            "sub": "Monotremata"
+          },
+          {
+            "segment": "Rest of world",
+            "value": 3,
+            "pct": 40,
+            "world": 5,
+            "aus": 2,
+            "label": "Egg-laying mammals",
+            "sub": "Monotremata"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 36,
+            "outerRadius": 56,
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "theta": {
+              "field": "value",
+              "type": "quantitative",
+              "stack": true
+            },
+            "color": {
+              "field": "segment",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "In Australia",
+                  "Rest of world"
+                ],
+                "range": [
+                  "#C8923D",
+                  "#DDD4BC"
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "label",
+                "type": "nominal",
+                "title": "Lineage"
+              },
+              {
+                "field": "world",
+                "type": "quantitative",
+                "title": "World species"
+              },
+              {
+                "field": "aus",
+                "type": "quantitative",
+                "title": "In Australia"
+              },
+              {
+                "field": "pct",
+                "type": "quantitative",
+                "title": "Australia share (%)"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 20,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "dy": -8
+          },
+          "encoding": {
+            "text": {
+              "field": "pct",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "dy": 9
+          },
+          "encoding": {
+            "text": {
+              "value": "% in Australia"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "dy": 84
+          },
+          "encoding": {
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "color": "#8B7355",
+            "dy": 72
+          },
+          "encoding": {
+            "text": {
+              "field": "sub",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 120,
+      "height": 175,
+      "data": {
+        "values": [
+          {
+            "segment": "In Australia",
+            "value": 2,
+            "pct": 50,
+            "world": 4,
+            "aus": 2,
+            "label": "Emus & cassowaries",
+            "sub": "Casuariiformes"
+          },
+          {
+            "segment": "Rest of world",
+            "value": 2,
+            "pct": 50,
+            "world": 4,
+            "aus": 2,
+            "label": "Emus & cassowaries",
+            "sub": "Casuariiformes"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 36,
+            "outerRadius": 56,
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "theta": {
+              "field": "value",
+              "type": "quantitative",
+              "stack": true
+            },
+            "color": {
+              "field": "segment",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "In Australia",
+                  "Rest of world"
+                ],
+                "range": [
+                  "#C8923D",
+                  "#DDD4BC"
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "label",
+                "type": "nominal",
+                "title": "Lineage"
+              },
+              {
+                "field": "world",
+                "type": "quantitative",
+                "title": "World species"
+              },
+              {
+                "field": "aus",
+                "type": "quantitative",
+                "title": "In Australia"
+              },
+              {
+                "field": "pct",
+                "type": "quantitative",
+                "title": "Australia share (%)"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 20,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "dy": -8
+          },
+          "encoding": {
+            "text": {
+              "field": "pct",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "dy": 9
+          },
+          "encoding": {
+            "text": {
+              "value": "% in Australia"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "dy": 84
+          },
+          "encoding": {
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "color": "#8B7355",
+            "dy": 72
+          },
+          "encoding": {
+            "text": {
+              "field": "sub",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 120,
+      "height": 175,
+      "data": {
+        "values": [
+          {
+            "segment": "In Australia",
+            "value": 159,
+            "pct": 48,
+            "world": 334,
+            "aus": 159,
+            "label": "Pouched mammals",
+            "sub": "Marsupialia"
+          },
+          {
+            "segment": "Rest of world",
+            "value": 175,
+            "pct": 48,
+            "world": 334,
+            "aus": 159,
+            "label": "Pouched mammals",
+            "sub": "Marsupialia"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 36,
+            "outerRadius": 56,
+            "stroke": "white",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "theta": {
+              "field": "value",
+              "type": "quantitative",
+              "stack": true
+            },
+            "color": {
+              "field": "segment",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "In Australia",
+                  "Rest of world"
+                ],
+                "range": [
+                  "#C8923D",
+                  "#DDD4BC"
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "label",
+                "type": "nominal",
+                "title": "Lineage"
+              },
+              {
+                "field": "world",
+                "type": "quantitative",
+                "title": "World species"
+              },
+              {
+                "field": "aus",
+                "type": "quantitative",
+                "title": "In Australia"
+              },
+              {
+                "field": "pct",
+                "type": "quantitative",
+                "title": "Australia share (%)"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 20,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "dy": -8
+          },
+          "encoding": {
+            "text": {
+              "field": "pct",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "color": "#5d544a",
+            "dy": 9
+          },
+          "encoding": {
+            "text": {
+              "value": "% in Australia"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "fontWeight": 700,
+            "color": "#2B1F12",
+            "dy": 84
+          },
+          "encoding": {
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.segment === 'In Australia'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 8.5,
+            "color": "#8B7355",
+            "dy": 72
+          },
+          "encoding": {
+            "text": {
+              "field": "sub",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

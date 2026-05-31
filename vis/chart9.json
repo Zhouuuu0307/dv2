@@ -1,0 +1,254 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "One season, thousands of animals, five states",
+    "subtitle": "The 2019–20 Black Summer fires swept through koala habitat across eastern Australia.",
+    "fontSize": 13,
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 12,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "concat": {
+      "spacing": 0
+    },
+    "axis": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "data": {
+    "url": "data/fire_impact_state.csv"
+  },
+  "transform": [
+    {
+      "calculate": "-datum.area_burnt_kha",
+      "as": "neg_area"
+    }
+  ],
+  "hconcat": [
+    {
+      "width": 170,
+      "height": 240,
+      "title": {
+        "text": "Hectares burnt (000s)",
+        "fontSize": 10,
+        "color": "#6B2410",
+        "anchor": "end",
+        "orient": "top"
+      },
+      "params": [
+        {
+          "name": "state_hover9",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout",
+            "fields": [
+              "state"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "color": "#A8472E",
+        "cornerRadiusBottomLeft": 3,
+        "cornerRadiusTopLeft": 3,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "area_burnt_kha",
+            "order": "ascending"
+          },
+          "axis": null
+        },
+        "x": {
+          "field": "neg_area",
+          "type": "quantitative",
+          "axis": {
+            "title": null,
+            "labelExpr": "format(abs(datum.value),',')",
+            "grid": true,
+            "gridColor": "#ece2c7",
+            "gridDash": [
+              2,
+              4
+            ],
+            "domain": false,
+            "ticks": false,
+            "tickCount": 4,
+            "labelFontSize": 10,
+            "labelColor": "#5d544a",
+            "labelLimit": 1000
+          },
+          "scale": {
+            "domain": [
+              -5500,
+              0
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "state_hover9",
+            "empty": true,
+            "value": 0.92
+          },
+          "value": 1
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "area_burnt_kha",
+            "type": "quantitative",
+            "title": "Hectares burnt (000s)",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "width": 110,
+      "height": 240,
+      "view": {
+        "stroke": null
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2B1F12",
+        "align": "center"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "area_burnt_kha",
+            "order": "ascending"
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "width": 170,
+      "height": 240,
+      "title": {
+        "text": "Koalas lost (estimated)",
+        "fontSize": 10,
+        "color": "#4878A8",
+        "anchor": "start",
+        "orient": "top"
+      },
+      "params": [
+        {
+          "name": "state_hover9",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout",
+            "fields": [
+              "state"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "color": "#4878A8",
+        "cornerRadiusBottomRight": 3,
+        "cornerRadiusTopRight": 3,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "area_burnt_kha",
+            "order": "ascending"
+          },
+          "axis": null
+        },
+        "x": {
+          "field": "koalas_lost_est",
+          "type": "quantitative",
+          "axis": {
+            "title": null,
+            "labelExpr": "datum.value >= 1000 ? format(datum.value/1000,'.0f') + 'k' : format(datum.value,',')",
+            "grid": true,
+            "gridColor": "#ece2c7",
+            "gridDash": [
+              2,
+              4
+            ],
+            "domain": false,
+            "ticks": false,
+            "tickCount": 4,
+            "labelFontSize": 10,
+            "labelColor": "#5d544a",
+            "labelLimit": 1000
+          },
+          "scale": {
+            "domain": [
+              0,
+              55000
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "state_hover9",
+            "empty": true,
+            "value": 0.92
+          },
+          "value": 1
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "koalas_lost_est",
+            "type": "quantitative",
+            "title": "Koalas lost",
+            "format": ","
+          },
+          {
+            "field": "pct_koala_range_burnt",
+            "type": "quantitative",
+            "title": "% range burnt"
+          },
+          {
+            "field": "note",
+            "type": "nominal",
+            "title": "Note"
+          }
+        ]
+      }
+    }
+  ]
+}

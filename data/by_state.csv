@@ -1,0 +1,41 @@
+species,common_name,state_code,count
+red_kangaroo,Red Kangaroo,NSW,10229
+red_kangaroo,Red Kangaroo,VIC,599
+red_kangaroo,Red Kangaroo,QLD,1875
+red_kangaroo,Red Kangaroo,SA,60496
+red_kangaroo,Red Kangaroo,WA,732
+red_kangaroo,Red Kangaroo,TAS,0
+red_kangaroo,Red Kangaroo,NT,5632
+red_kangaroo,Red Kangaroo,ACT,2
+eastern_grey_kangaroo,Eastern Grey Kangaroo,NSW,180099
+eastern_grey_kangaroo,Eastern Grey Kangaroo,VIC,27638
+eastern_grey_kangaroo,Eastern Grey Kangaroo,QLD,9519
+eastern_grey_kangaroo,Eastern Grey Kangaroo,SA,278
+eastern_grey_kangaroo,Eastern Grey Kangaroo,WA,225
+eastern_grey_kangaroo,Eastern Grey Kangaroo,TAS,607
+eastern_grey_kangaroo,Eastern Grey Kangaroo,NT,5
+eastern_grey_kangaroo,Eastern Grey Kangaroo,ACT,4410
+koala,Koala,NSW,248573
+koala,Koala,VIC,20490
+koala,Koala,QLD,116153
+koala,Koala,SA,8083
+koala,Koala,WA,5
+koala,Koala,TAS,5
+koala,Koala,NT,29
+koala,Koala,ACT,62
+emu,Emu,NSW,43144
+emu,Emu,VIC,23985
+emu,Emu,QLD,20318
+emu,Emu,SA,42788
+emu,Emu,WA,15381
+emu,Emu,TAS,225
+emu,Emu,NT,1931
+emu,Emu,ACT,904
+platypus,Platypus,NSW,9486
+platypus,Platypus,VIC,7052
+platypus,Platypus,QLD,3750
+platypus,Platypus,SA,83
+platypus,Platypus,WA,0
+platypus,Platypus,TAS,3048
+platypus,Platypus,NT,22
+platypus,Platypus,ACT,751

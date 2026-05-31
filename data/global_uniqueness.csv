@@ -1,0 +1,5 @@
+group,group_label,world_species,australia_species,australia_endemic,share_in_australia,note,source
+Monotremata,Egg-laying mammals,5,2,1,40,All 5 monotreme species exist only in Australia and New Guinea — nowhere else on Earth.,IUCN / Australian Museum
+Marsupialia,Pouched mammals,334,159,159,48,Marsupials evolved across Gondwana but only Australia kept a large diverse radiation.,IUCN / DCCEEW
+Casuariiformes,Emus & cassowaries,4,2,1,50,Only Australia and New Guinea host this ratite lineage today.,IUCN / Australian Museum
+Placentalia,All other mammals,>5500,~50,~0,1,The default group for the rest of the world — globally dominant but rare in Australia outside bats and rodents.,IUCN

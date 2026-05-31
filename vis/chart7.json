@@ -1,0 +1,194 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 420,
+  "height": 400,
+  "padding": {
+    "top": 10,
+    "right": 24,
+    "bottom": 10,
+    "left": 14
+  },
+  "background": "transparent",
+  "title": {
+    "text": "Each state has its own animal identity",
+    "subtitle": "Tasmania is almost entirely platypus. South Australia belongs to the red kangaroo. Each state tells a different story.",
+    "fontSize": 13,
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 12,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "data": {
+    "url": "data/by_state.csv"
+  },
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "count",
+          "as": "state_total"
+        }
+      ],
+      "groupby": [
+        "state_code"
+      ]
+    },
+    {
+      "calculate": "datum.count / datum.state_total * 100",
+      "as": "share"
+    }
+  ],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "species_focus7",
+          "select": {
+            "type": "point",
+            "fields": [
+              "common_name"
+            ],
+            "on": "click",
+            "clear": "dblclick"
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "cursor": "pointer",
+        "stroke": "white",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "y": {
+          "field": "state_code",
+          "type": "nominal",
+          "sort": {
+            "field": "state_total",
+            "op": "max",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelFontSize": 12,
+            "labelFontWeight": 700,
+            "labelColor": "#2B1F12",
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 8,
+            "labelLimit": 1000
+          }
+        },
+        "x": {
+          "field": "share",
+          "type": "quantitative",
+          "stack": "normalize",
+          "axis": {
+            "title": "Share of records within each state (%)",
+            "titleFontSize": 11,
+            "titleColor": "#5d544a",
+            "titleFontWeight": 600,
+            "format": ".0%",
+            "grid": true,
+            "gridColor": "#ece2c7",
+            "gridDash": [
+              2,
+              4
+            ],
+            "domain": false,
+            "ticks": false,
+            "labelFontSize": 10,
+            "labelColor": "#5d544a",
+            "tickCount": 5,
+            "labelLimit": 1000
+          }
+        },
+        "color": {
+          "field": "common_name",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Red Kangaroo",
+              "Eastern Grey Kangaroo",
+              "Koala",
+              "Emu",
+              "Platypus"
+            ],
+            "range": [
+              "#B85450",
+              "#8B8378",
+              "#4878A8",
+              "#C8923D",
+              "#4A6670"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "labelFontSize": 11,
+            "labelColor": "#2B1F12",
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 120,
+            "offset": 8,
+            "labelLimit": 1000
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "species_focus7",
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "state_code",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Records",
+            "format": ","
+          },
+          {
+            "field": "state_total",
+            "type": "quantitative",
+            "title": "State total",
+            "format": ","
+          },
+          {
+            "field": "share",
+            "type": "quantitative",
+            "title": "% of state",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ]
+}

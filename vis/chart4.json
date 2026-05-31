@@ -1,0 +1,445 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 175,
+  "padding": 0,
+  "background": "transparent",
+  "title": {
+    "text": "Five species, four traits",
+    "subtitle": "From the 1.4 kg platypus to the 55 kg red kangaroo — five animals that could not be more different.",
+    "fontSize": 13,
+    "subtitleFontSize": 9.5,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 10,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "common_name": "Platypus",
+        "trait": "Body weight",
+        "trait_order": 1,
+        "value": 1.4,
+        "unit": "kg",
+        "norm": 0.0,
+        "value_label": "1.4 kg"
+      },
+      {
+        "common_name": "Platypus",
+        "trait": "Lifespan",
+        "trait_order": 2,
+        "value": 11,
+        "unit": "yrs",
+        "norm": 0.0,
+        "value_label": "11 yrs"
+      },
+      {
+        "common_name": "Platypus",
+        "trait": "Days to birth",
+        "trait_order": 3,
+        "value": 10,
+        "unit": "days",
+        "norm": 0.0,
+        "value_label": "10 days"
+      },
+      {
+        "common_name": "Platypus",
+        "trait": "Offspring/yr",
+        "trait_order": 4,
+        "value": 2,
+        "unit": "/yr",
+        "norm": 0.143,
+        "value_label": "2 /yr"
+      },
+      {
+        "common_name": "Koala",
+        "trait": "Body weight",
+        "trait_order": 1,
+        "value": 9,
+        "unit": "kg",
+        "norm": 0.142,
+        "value_label": "9 kg"
+      },
+      {
+        "common_name": "Koala",
+        "trait": "Lifespan",
+        "trait_order": 2,
+        "value": 13,
+        "unit": "yrs",
+        "norm": 0.4,
+        "value_label": "13 yrs"
+      },
+      {
+        "common_name": "Koala",
+        "trait": "Days to birth",
+        "trait_order": 3,
+        "value": 35,
+        "unit": "days",
+        "norm": 0.543,
+        "value_label": "35 days"
+      },
+      {
+        "common_name": "Koala",
+        "trait": "Offspring/yr",
+        "trait_order": 4,
+        "value": 1,
+        "unit": "/yr",
+        "norm": 0.0,
+        "value_label": "1 /yr"
+      },
+      {
+        "common_name": "Eastern Grey Kangaroo",
+        "trait": "Body weight",
+        "trait_order": 1,
+        "value": 45,
+        "unit": "kg",
+        "norm": 0.813,
+        "value_label": "45 kg"
+      },
+      {
+        "common_name": "Eastern Grey Kangaroo",
+        "trait": "Lifespan",
+        "trait_order": 2,
+        "value": 12,
+        "unit": "yrs",
+        "norm": 0.2,
+        "value_label": "12 yrs"
+      },
+      {
+        "common_name": "Eastern Grey Kangaroo",
+        "trait": "Days to birth",
+        "trait_order": 3,
+        "value": 36,
+        "unit": "days",
+        "norm": 0.565,
+        "value_label": "36 days"
+      },
+      {
+        "common_name": "Eastern Grey Kangaroo",
+        "trait": "Offspring/yr",
+        "trait_order": 4,
+        "value": 1,
+        "unit": "/yr",
+        "norm": 0.0,
+        "value_label": "1 /yr"
+      },
+      {
+        "common_name": "Emu",
+        "trait": "Body weight",
+        "trait_order": 1,
+        "value": 40,
+        "unit": "kg",
+        "norm": 0.72,
+        "value_label": "40 kg"
+      },
+      {
+        "common_name": "Emu",
+        "trait": "Lifespan",
+        "trait_order": 2,
+        "value": 15,
+        "unit": "yrs",
+        "norm": 0.8,
+        "value_label": "15 yrs"
+      },
+      {
+        "common_name": "Emu",
+        "trait": "Days to birth",
+        "trait_order": 3,
+        "value": 56,
+        "unit": "days",
+        "norm": 1.0,
+        "value_label": "56 days"
+      },
+      {
+        "common_name": "Emu",
+        "trait": "Offspring/yr",
+        "trait_order": 4,
+        "value": 8,
+        "unit": "/yr",
+        "norm": 1.0,
+        "value_label": "8 /yr"
+      },
+      {
+        "common_name": "Red Kangaroo",
+        "trait": "Body weight",
+        "trait_order": 1,
+        "value": 55,
+        "unit": "kg",
+        "norm": 1.0,
+        "value_label": "55 kg"
+      },
+      {
+        "common_name": "Red Kangaroo",
+        "trait": "Lifespan",
+        "trait_order": 2,
+        "value": 16,
+        "unit": "yrs",
+        "norm": 1.0,
+        "value_label": "16 yrs"
+      },
+      {
+        "common_name": "Red Kangaroo",
+        "trait": "Days to birth",
+        "trait_order": 3,
+        "value": 33,
+        "unit": "days",
+        "norm": 0.5,
+        "value_label": "33 days"
+      },
+      {
+        "common_name": "Red Kangaroo",
+        "trait": "Offspring/yr",
+        "trait_order": 4,
+        "value": 1,
+        "unit": "/yr",
+        "norm": 0.0,
+        "value_label": "1 /yr"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "x": {
+          "field": "trait",
+          "type": "nominal",
+          "sort": {
+            "field": "trait_order"
+          },
+          "axis": {
+            "title": null,
+            "orient": "top",
+            "labelFontSize": 9.5,
+            "labelFontWeight": 700,
+            "labelColor": "#2B1F12",
+            "labelAngle": 0,
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 8,
+            "labelLimit": 80
+          },
+          "scale": {
+            "paddingInner": 0.1,
+            "paddingOuter": 0.2
+          }
+        },
+        "y": {
+          "field": "common_name",
+          "type": "nominal",
+          "sort": [
+            "Platypus",
+            "Koala",
+            "Eastern Grey Kangaroo",
+            "Emu",
+            "Red Kangaroo"
+          ],
+          "axis": {
+            "title": null,
+            "labelFontSize": 9,
+            "labelFontWeight": 600,
+            "labelColor": "#2B1F12",
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 6,
+            "labelLimit": 110
+          }
+        },
+        "size": {
+          "field": "norm",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              40,
+              900
+            ]
+          },
+          "legend": null
+        },
+        "color": {
+          "field": "common_name",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Red Kangaroo",
+              "Eastern Grey Kangaroo",
+              "Koala",
+              "Emu",
+              "Platypus"
+            ],
+            "range": [
+              "#B85450",
+              "#8B8378",
+              "#4878A8",
+              "#C8923D",
+              "#4A6670"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": [
+            {
+              "param": "sp_click4",
+              "empty": false,
+              "value": 0.92
+            },
+            {
+              "param": "sp_hover4",
+              "empty": false,
+              "value": 0.92
+            }
+          ],
+          "value": 0.82
+        },
+        "stroke": {
+          "condition": [
+            {
+              "param": "sp_hover4",
+              "empty": false,
+              "value": "#2B1F12"
+            },
+            {
+              "param": "sp_click4",
+              "empty": false,
+              "value": "#2B1F12"
+            }
+          ],
+          "value": "white"
+        },
+        "strokeWidth": {
+          "condition": [
+            {
+              "param": "sp_hover4",
+              "empty": false,
+              "value": 1.5
+            },
+            {
+              "param": "sp_click4",
+              "empty": false,
+              "value": 1.5
+            }
+          ],
+          "value": 0.5
+        },
+        "tooltip": [
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "trait",
+            "type": "nominal",
+            "title": "Trait"
+          },
+          {
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Value"
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "sp_click4",
+          "select": {
+            "type": "point",
+            "fields": [
+              "common_name"
+            ],
+            "on": "click",
+            "clear": "dblclick"
+          }
+        },
+        {
+          "name": "sp_hover4",
+          "select": {
+            "type": "point",
+            "fields": [
+              "common_name"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ]
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.norm > 0.3"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 8.5,
+        "fontWeight": 700,
+        "color": "white"
+      },
+      "encoding": {
+        "x": {
+          "field": "trait",
+          "type": "nominal",
+          "sort": {
+            "field": "trait_order"
+          },
+          "axis": {
+            "labelFontSize": 9.5,
+            "labelLimit": 80
+          },
+          "scale": {
+            "paddingInner": 0.1,
+            "paddingOuter": 0.2
+          }
+        },
+        "y": {
+          "field": "common_name",
+          "type": "nominal",
+          "sort": [
+            "Platypus",
+            "Koala",
+            "Eastern Grey Kangaroo",
+            "Emu",
+            "Red Kangaroo"
+          ]
+        },
+        "text": {
+          "field": "value_label",
+          "type": "nominal"
+        },
+        "opacity": {
+          "condition": [
+            {
+              "param": "sp_click4",
+              "empty": false,
+              "value": 1
+            },
+            {
+              "param": "sp_hover4",
+              "empty": false,
+              "value": 1
+            }
+          ],
+          "value": 0.82
+        }
+      }
+    }
+  ],
+  "width": {
+    "step": 68
+  }
+}

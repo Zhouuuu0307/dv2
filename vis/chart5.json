@@ -1,0 +1,225 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 680,
+  "height": 500,
+  "padding": {
+    "top": 10,
+    "right": 16,
+    "bottom": 10,
+    "left": 16
+  },
+  "background": "transparent",
+  "title": {
+    "text": "The map of Australia is also a map of its animals",
+    "subtitle": "Every dot is a real sighting. Each species carves out its own territory within the continent.",
+    "fontSize": 16,
+    "subtitleFontSize": 11.5,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 14,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 650,
+    "translate": [
+      340,
+      255
+    ]
+  },
+  "layer": [
+    {
+      "description": "States base layer",
+      "data": {
+        "url": "assets/states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0e5cb",
+        "stroke": "#c9b080",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "description": "State code labels",
+      "data": {
+        "values": [
+          {
+            "code": "NSW",
+            "lon": 146.5,
+            "lat": -32.5
+          },
+          {
+            "code": "VIC",
+            "lon": 144.5,
+            "lat": -37.0
+          },
+          {
+            "code": "QLD",
+            "lon": 144.5,
+            "lat": -22.0
+          },
+          {
+            "code": "SA",
+            "lon": 135.5,
+            "lat": -30.0
+          },
+          {
+            "code": "WA",
+            "lon": 122.0,
+            "lat": -25.0
+          },
+          {
+            "code": "TAS",
+            "lon": 146.5,
+            "lat": -42.0
+          },
+          {
+            "code": "NT",
+            "lon": 133.5,
+            "lat": -19.5
+          },
+          {
+            "code": "ACT",
+            "lon": 149.1,
+            "lat": -35.6
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "color": "#8B6B3F",
+        "opacity": 0.7
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "code"
+        }
+      }
+    },
+    {
+      "description": "Species point layer",
+      "data": {
+        "url": "data/points_sampled.csv"
+      },
+      "params": [
+        {
+          "name": "species_focus5",
+          "select": {
+            "type": "point",
+            "fields": [
+              "common_name"
+            ],
+            "on": "click",
+            "clear": "dblclick",
+            "toggle": "event.shiftKey"
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "opacity": 0.55,
+        "stroke": "white",
+        "strokeWidth": 0.3
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "common_name",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Red Kangaroo",
+              "Eastern Grey Kangaroo",
+              "Koala",
+              "Emu",
+              "Platypus"
+            ],
+            "range": [
+              "#B85450",
+              "#8B8378",
+              "#4878A8",
+              "#C8923D",
+              "#4A6670"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "none",
+            "labelFontSize": 11,
+            "labelColor": "#2B1F12",
+            "fillColor": "#FAF6ED",
+            "strokeColor": "#c9b080",
+            "padding": 8,
+            "symbolType": "circle",
+            "symbolSize": 130,
+            "labelLimit": 1000,
+            "legendX": 570,
+            "legendY": 370
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "species_focus5",
+            "value": 0.65
+          },
+          "value": 0.08
+        },
+        "tooltip": [
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "state_code",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year"
+          }
+        ]
+      }
+    }
+  ]
+}

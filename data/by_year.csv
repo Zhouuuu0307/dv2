@@ -1,0 +1,181 @@
+species,common_name,year,count
+red_kangaroo,Red Kangaroo,1990,983
+red_kangaroo,Red Kangaroo,1991,996
+red_kangaroo,Red Kangaroo,1992,1318
+red_kangaroo,Red Kangaroo,1993,1618
+red_kangaroo,Red Kangaroo,1994,1123
+red_kangaroo,Red Kangaroo,1995,1244
+red_kangaroo,Red Kangaroo,1996,1457
+red_kangaroo,Red Kangaroo,1997,1001
+red_kangaroo,Red Kangaroo,1998,1056
+red_kangaroo,Red Kangaroo,1999,3146
+red_kangaroo,Red Kangaroo,2000,1355
+red_kangaroo,Red Kangaroo,2001,1640
+red_kangaroo,Red Kangaroo,2002,1210
+red_kangaroo,Red Kangaroo,2003,1658
+red_kangaroo,Red Kangaroo,2004,1219
+red_kangaroo,Red Kangaroo,2005,1453
+red_kangaroo,Red Kangaroo,2006,1271
+red_kangaroo,Red Kangaroo,2007,1073
+red_kangaroo,Red Kangaroo,2008,1007
+red_kangaroo,Red Kangaroo,2009,1341
+red_kangaroo,Red Kangaroo,2010,1388
+red_kangaroo,Red Kangaroo,2011,1061
+red_kangaroo,Red Kangaroo,2012,1310
+red_kangaroo,Red Kangaroo,2013,1535
+red_kangaroo,Red Kangaroo,2014,1367
+red_kangaroo,Red Kangaroo,2015,2166
+red_kangaroo,Red Kangaroo,2016,2913
+red_kangaroo,Red Kangaroo,2017,2803
+red_kangaroo,Red Kangaroo,2018,3488
+red_kangaroo,Red Kangaroo,2019,2586
+red_kangaroo,Red Kangaroo,2020,4041
+red_kangaroo,Red Kangaroo,2021,3691
+red_kangaroo,Red Kangaroo,2022,6079
+red_kangaroo,Red Kangaroo,2023,3589
+red_kangaroo,Red Kangaroo,2024,638
+red_kangaroo,Red Kangaroo,2025,966
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1990,385
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1991,1457
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1992,990
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1993,822
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1994,872
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1995,606
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1996,549
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1997,728
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1998,625
+eastern_grey_kangaroo,Eastern Grey Kangaroo,1999,476
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2000,517
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2001,797
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2002,814
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2003,974
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2004,1064
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2005,871
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2006,959
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2007,569
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2008,724
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2009,1152
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2010,1177
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2011,2199
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2012,18142
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2013,13780
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2014,20023
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2015,5789
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2016,6082
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2017,7100
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2018,9363
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2019,21336
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2020,15579
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2021,14316
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2022,15107
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2023,15322
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2024,18349
+eastern_grey_kangaroo,Eastern Grey Kangaroo,2025,11328
+koala,Koala,1990,1433
+koala,Koala,1991,2763
+koala,Koala,1992,3710
+koala,Koala,1993,2035
+koala,Koala,1994,1315
+koala,Koala,1995,1250
+koala,Koala,1996,3941
+koala,Koala,1997,4380
+koala,Koala,1998,4644
+koala,Koala,1999,4139
+koala,Koala,2000,4523
+koala,Koala,2001,4066
+koala,Koala,2002,5623
+koala,Koala,2003,3323
+koala,Koala,2004,3480
+koala,Koala,2005,3083
+koala,Koala,2006,2979
+koala,Koala,2007,3008
+koala,Koala,2008,2942
+koala,Koala,2009,4259
+koala,Koala,2010,5194
+koala,Koala,2011,6592
+koala,Koala,2012,6047
+koala,Koala,2013,7840
+koala,Koala,2014,8227
+koala,Koala,2015,8753
+koala,Koala,2016,9598
+koala,Koala,2017,10060
+koala,Koala,2018,8696
+koala,Koala,2019,13143
+koala,Koala,2020,14392
+koala,Koala,2021,26542
+koala,Koala,2022,20657
+koala,Koala,2023,82403
+koala,Koala,2024,34887
+koala,Koala,2025,16678
+emu,Emu,1990,621
+emu,Emu,1991,1007
+emu,Emu,1992,922
+emu,Emu,1993,894
+emu,Emu,1994,831
+emu,Emu,1995,914
+emu,Emu,1996,974
+emu,Emu,1997,1183
+emu,Emu,1998,1609
+emu,Emu,1999,3440
+emu,Emu,2000,3310
+emu,Emu,2001,3433
+emu,Emu,2002,2008
+emu,Emu,2003,1624
+emu,Emu,2004,1389
+emu,Emu,2005,1547
+emu,Emu,2006,1598
+emu,Emu,2007,1753
+emu,Emu,2008,1816
+emu,Emu,2009,1948
+emu,Emu,2010,1828
+emu,Emu,2011,2113
+emu,Emu,2012,2806
+emu,Emu,2013,2888
+emu,Emu,2014,3053
+emu,Emu,2015,3294
+emu,Emu,2016,4035
+emu,Emu,2017,5388
+emu,Emu,2018,5151
+emu,Emu,2019,7004
+emu,Emu,2020,6064
+emu,Emu,2021,7798
+emu,Emu,2022,13986
+emu,Emu,2023,12631
+emu,Emu,2024,10610
+emu,Emu,2025,8010
+platypus,Platypus,1990,176
+platypus,Platypus,1991,194
+platypus,Platypus,1992,209
+platypus,Platypus,1993,175
+platypus,Platypus,1994,379
+platypus,Platypus,1995,232
+platypus,Platypus,1996,282
+platypus,Platypus,1997,237
+platypus,Platypus,1998,348
+platypus,Platypus,1999,137
+platypus,Platypus,2000,131
+platypus,Platypus,2001,123
+platypus,Platypus,2002,515
+platypus,Platypus,2003,373
+platypus,Platypus,2004,291
+platypus,Platypus,2005,265
+platypus,Platypus,2006,249
+platypus,Platypus,2007,190
+platypus,Platypus,2008,263
+platypus,Platypus,2009,299
+platypus,Platypus,2010,251
+platypus,Platypus,2011,188
+platypus,Platypus,2012,224
+platypus,Platypus,2013,247
+platypus,Platypus,2014,244
+platypus,Platypus,2015,186
+platypus,Platypus,2016,350
+platypus,Platypus,2017,452
+platypus,Platypus,2018,430
+platypus,Platypus,2019,625
+platypus,Platypus,2020,643
+platypus,Platypus,2021,1479
+platypus,Platypus,2022,1599
+platypus,Platypus,2023,1824
+platypus,Platypus,2024,1595
+platypus,Platypus,2025,1411

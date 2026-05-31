@@ -1,0 +1,177 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "padding": {
+    "top": 8,
+    "right": 80,
+    "bottom": 8,
+    "left": 8
+  },
+  "background": "transparent",
+  "title": {
+    "text": "Five animals, nearly a million records",
+    "subtitle": "Nearly a million sightings recorded — yet two of the five are quietly disappearing.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 12
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "data": {
+    "url": "data/species_meta.csv"
+  },
+  "encoding": {
+    "y": {
+      "field": "common_name",
+      "type": "nominal",
+      "sort": null,
+      "axis": {
+        "title": null,
+        "labelFontSize": 12,
+        "labelFontWeight": 600,
+        "labelColor": "#2B1F12",
+        "labelLimit": 1000,
+        "domain": false,
+        "ticks": false,
+        "labelPadding": 8
+      }
+    },
+    "x": {
+      "field": "total_records",
+      "type": "quantitative",
+      "axis": {
+        "title": "Observations",
+        "titleFontSize": 11,
+        "titleColor": "#5d544a",
+        "titleFontWeight": 600,
+        "labelExpr": "datum.value >= 1000 ? format(datum.value/1000,'.0f') + 'k' : format(datum.value,',')",
+        "grid": true,
+        "gridColor": "#ece2c7",
+        "gridDash": [
+          2,
+          4
+        ],
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 10,
+        "labelColor": "#5d544a",
+        "tickCount": 5,
+        "labelLimit": 1000
+      },
+      "scale": {
+        "domainMin": 0,
+        "nice": true
+      }
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "sp_hover",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout",
+            "fields": [
+              "species"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3,
+        "cursor": "pointer",
+        "height": 26
+      },
+      "encoding": {
+        "color": {
+          "field": "common_name",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Red Kangaroo",
+              "Eastern Grey Kangaroo",
+              "Koala",
+              "Emu",
+              "Platypus"
+            ],
+            "range": [
+              "#B85450",
+              "#8B8378",
+              "#4878A8",
+              "#C8923D",
+              "#4A6670"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "param": "sp_hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.5
+        },
+        "tooltip": [
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "scientific_name",
+            "type": "nominal",
+            "title": "Scientific name"
+          },
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "total_records",
+            "type": "quantitative",
+            "title": "Observations",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2B1F12"
+      },
+      "encoding": {
+        "text": {
+          "field": "total_records",
+          "type": "quantitative",
+          "format": ","
+        }
+      }
+    }
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  }
+}

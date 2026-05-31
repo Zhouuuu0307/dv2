@@ -1,0 +1,195 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 400,
+  "padding": {
+    "top": 10,
+    "right": 16,
+    "bottom": 10,
+    "left": 16
+  },
+  "background": "transparent",
+  "title": {
+    "text": "Where each icon rules: a continent divided by species",
+    "subtitle": [
+      "Each ~50 km square is coloured by the species recorded there most often.",
+      "Red kangaroo claims the arid interior; koala the east coast; platypus the south-east rivers."
+    ],
+    "fontSize": 13,
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 14,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 490,
+    "translate": [
+      220,
+      205
+    ]
+  },
+  "layer": [
+    {
+      "description": "States base",
+      "data": {
+        "url": "assets/states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0e5cb",
+        "stroke": "#c9b080",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "description": "Bin grid cells — drawn as squares at cell centroids",
+      "data": {
+        "url": "data/grid_dominant.csv"
+      },
+      "params": [
+        {
+          "name": "cell_hover",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "square",
+        "size": 18,
+        "stroke": "white",
+        "strokeWidth": 0.3,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "dominant",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "red_kangaroo",
+              "eastern_grey_kangaroo",
+              "koala",
+              "emu",
+              "platypus"
+            ],
+            "range": [
+              "#B85450",
+              "#8B8378",
+              "#4878A8",
+              "#C8923D",
+              "#4A6670"
+            ]
+          },
+          "legend": {
+            "title": "Dominant species",
+            "titleFontSize": 11,
+            "titleFontWeight": 600,
+            "titleColor": "#5d544a",
+            "labelFontSize": 11,
+            "labelColor": "#2B1F12",
+            "labelExpr": "{ 'red_kangaroo': 'Red Kangaroo', 'eastern_grey_kangaroo': 'Eastern Grey Kangaroo', 'koala': 'Koala', 'emu': 'Emu', 'platypus': 'Platypus' }[datum.value]",
+            "orient": "none",
+            "fillColor": "#FAF6ED",
+            "strokeColor": "#c9b080",
+            "padding": 8,
+            "symbolType": "square",
+            "symbolSize": 120,
+            "labelLimit": 1000,
+            "legendX": 4,
+            "legendY": 260
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "cell_hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.85
+        },
+        "size": {
+          "condition": {
+            "param": "cell_hover",
+            "empty": false,
+            "value": 90
+          },
+          "value": 36
+        },
+        "tooltip": [
+          {
+            "field": "dominant",
+            "type": "nominal",
+            "title": "Dominant species"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "Total records",
+            "format": ","
+          },
+          {
+            "field": "n_red_kangaroo",
+            "type": "quantitative",
+            "title": "Red Kangaroo",
+            "format": ","
+          },
+          {
+            "field": "n_eastern_grey_kangaroo",
+            "type": "quantitative",
+            "title": "Eastern Grey K.",
+            "format": ","
+          },
+          {
+            "field": "n_koala",
+            "type": "quantitative",
+            "title": "Koala",
+            "format": ","
+          },
+          {
+            "field": "n_emu",
+            "type": "quantitative",
+            "title": "Emu",
+            "format": ","
+          },
+          {
+            "field": "n_platypus",
+            "type": "quantitative",
+            "title": "Platypus",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
+}

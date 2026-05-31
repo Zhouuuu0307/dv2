@@ -1,0 +1,11 @@
+state,state_code,metric,value,display_value,sort_key
+New South Wales,NSW,Hectares burnt,-5500000,5500,5500
+New South Wales,NSW,Koalas lost,25000,25000,5500
+Victoria,VIC,Hectares burnt,-1500000,1500,1500
+Victoria,VIC,Koalas lost,6500,6500,1500
+Queensland,QLD,Hectares burnt,-2500000,2500,2500
+Queensland,QLD,Koalas lost,7200,7200,2500
+South Australia,SA,Hectares burnt,-280000,280,280
+South Australia,SA,Koalas lost,50000,50000,280
+ACT,ACT,Hectares burnt,-87000,87,87
+ACT,ACT,Koalas lost,50,50,87

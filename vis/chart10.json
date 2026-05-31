@@ -1,0 +1,308 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 560,
+  "height": 220,
+  "padding": {
+    "top": 40,
+    "right": 24,
+    "bottom": 10,
+    "left": 16
+  },
+  "background": "transparent",
+  "title": {
+    "text": "Different icons, different threats",
+    "subtitle": "The koala faces the broadest danger. The platypus faces the quietest — rivers shrinking beneath it.",
+    "fontSize": 14,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#2B1F12",
+    "subtitleColor": "#5d544a",
+    "offset": 12,
+    "subtitlePadding": 4
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "titleFont": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "data": {
+    "url": "data/threats_long.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.severity_score)",
+      "as": "severity_score"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "common_name",
+      "type": "nominal",
+      "sort": [
+        "Koala",
+        "Platypus",
+        "Emu",
+        "Eastern Grey Kangaroo",
+        "Red Kangaroo"
+      ],
+      "axis": {
+        "title": null,
+        "labelFontSize": 11,
+        "labelFontWeight": 600,
+        "labelColor": "#2B1F12",
+        "labelLimit": 1000,
+        "labelPadding": 8,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "x": {
+      "field": "threat",
+      "type": "nominal",
+      "sort": [
+        "Habitat clearing",
+        "Vehicle strike",
+        "Climate change",
+        "Drought",
+        "Disease",
+        "Bushfire",
+        "River regulation",
+        "Pollution",
+        "Predation",
+        "Commercial harvest"
+      ],
+      "axis": {
+        "title": null,
+        "labelFontSize": 10.5,
+        "labelFontWeight": 600,
+        "labelColor": "#2B1F12",
+        "labelAngle": -35,
+        "labelPadding": 6,
+        "domain": false,
+        "ticks": false,
+        "orient": "top",
+        "labelLimit": 1000
+      }
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "row_click",
+          "select": {
+            "type": "point",
+            "fields": [
+              "common_name"
+            ],
+            "on": "click",
+            "clear": "dblclick"
+          }
+        },
+        {
+          "name": "col_click",
+          "select": {
+            "type": "point",
+            "fields": [
+              "threat"
+            ],
+            "on": "click",
+            "clear": "dblclick"
+          }
+        },
+        {
+          "name": "hov",
+          "select": {
+            "type": "point",
+            "fields": [
+              "common_name",
+              "threat"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "color": {
+          "field": "severity_score",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "range": [
+              "#EDE5D2",
+              "#E4D7B3",
+              "#D97742",
+              "#A8472E"
+            ]
+          },
+          "legend": {
+            "title": "Severity",
+            "titleFontSize": 11,
+            "titleColor": "#5d544a",
+            "titleFontWeight": 600,
+            "labelFontSize": 10,
+            "labelColor": "#2B1F12",
+            "values": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "labelExpr": "{'0':'Not listed','1':'Low','2':'Medium','3':'High'}[datum.value]",
+            "orient": "right",
+            "symbolType": "square",
+            "symbolSize": 200,
+            "labelLimit": 1000
+          }
+        },
+        "stroke": {
+          "condition": [
+            {
+              "param": "hov",
+              "empty": false,
+              "value": "#2B1F12"
+            },
+            {
+              "param": "row_click",
+              "empty": false,
+              "value": "#6B4226"
+            },
+            {
+              "param": "col_click",
+              "empty": false,
+              "value": "#6B4226"
+            }
+          ],
+          "value": "white"
+        },
+        "strokeWidth": {
+          "condition": [
+            {
+              "param": "hov",
+              "empty": false,
+              "value": 2
+            },
+            {
+              "param": "row_click",
+              "empty": false,
+              "value": 1.5
+            },
+            {
+              "param": "col_click",
+              "empty": false,
+              "value": 1.5
+            }
+          ],
+          "value": 3
+        },
+        "opacity": {
+          "condition": [
+            {
+              "param": "row_click",
+              "empty": true,
+              "value": 0.9
+            },
+            {
+              "param": "row_click",
+              "empty": false,
+              "value": 1
+            },
+            {
+              "param": "col_click",
+              "empty": false,
+              "value": 1
+            }
+          ],
+          "value": 0.15
+        },
+        "tooltip": [
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "threat",
+            "type": "nominal",
+            "title": "Threat"
+          },
+          {
+            "field": "severity",
+            "type": "nominal",
+            "title": "Severity"
+          },
+          {
+            "field": "source",
+            "type": "nominal",
+            "title": "Source"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Text labels",
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": 700
+      },
+      "encoding": {
+        "text": {
+          "field": "severity",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": [
+            {
+              "test": "datum.severity_score === 3",
+              "value": "#FAF6ED"
+            },
+            {
+              "test": "datum.severity_score === 0",
+              "value": "#a89e88"
+            }
+          ],
+          "value": "#2B1F12"
+        },
+        "opacity": {
+          "condition": [
+            {
+              "param": "row_click",
+              "empty": true,
+              "value": 1
+            },
+            {
+              "param": "row_click",
+              "empty": false,
+              "value": 1
+            },
+            {
+              "param": "col_click",
+              "empty": false,
+              "value": 1
+            }
+          ],
+          "value": 0.15
+        }
+      }
+    }
+  ]
+}
